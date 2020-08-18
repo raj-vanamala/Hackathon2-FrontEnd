@@ -1,0 +1,9 @@
+.flex-css {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+    justify-content: space-between;
+    margin-top: 2%;
+}
