@@ -14,7 +14,7 @@ class  Products extends React.Component {
 
     componentDidMount() {
 
-        fetch("http://localhost:4040/loadProducts")
+        fetch("https://hackathon2-backend-code.herokuapp.com/loadProducts")
 
         .then((response)=>response.json())
 
@@ -30,7 +30,7 @@ class  Products extends React.Component {
 
     addProductToCart = (product) => {
 
-        let url = 'http://localhost:4040/addProductToCart'
+        let url = 'https://hackathon2-backend-code.herokuapp.com/addProductToCart'
 
         fetch(url,{
             "method" : "post",

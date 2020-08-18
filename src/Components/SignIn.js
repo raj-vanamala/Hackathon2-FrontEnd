@@ -37,7 +37,7 @@ class SignIn extends React.Component {
 
         event.preventDefault();
     
-            let url = 'http://localhost:4040/signIn'
+            let url = 'https://hackathon2-backend-code.herokuapp.com/signIn'
     
             fetch(url,{
                 "method" : "post",

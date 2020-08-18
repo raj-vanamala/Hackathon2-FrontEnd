@@ -46,7 +46,7 @@ export default class ContactUs extends React.Component {
 
         event.preventDefault();
 
-        let url = 'http://localhost:4040/submitRequest'
+        let url = 'https://hackathon2-backend-code.herokuapp.com/submitRequest'
 
         fetch(url,{
             "method" : "post",

@@ -12,7 +12,7 @@ import {connect} from 'react-redux'
 
     componentDidMount() {
 
-        fetch("http://localhost:4040/loadProductsInCart"+this.props.user.email)
+        fetch("https://hackathon2-backend-code.herokuapp.com/loadProductsInCart"+this.props.user.email)
 
         .then((response)=>response.json())
 
