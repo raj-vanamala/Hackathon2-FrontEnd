@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container , Card , Button} from 'react-bootstrap'
-// import { AdminProducts } from './AdminProducts'
+// import  AdminProducts  from './AdminProducts'
 import {connect } from "react-redux"
 
 class  Products extends React.Component {
@@ -14,12 +14,11 @@ class  Products extends React.Component {
 
     componentDidMount() {
 
-        fetch("https://hackathon2-backend-code.herokuapp.com/loadProducts")
+        fetch("http://localhost:4040/loadProducts")
 
         .then((response)=>response.json())
 
         .then((products) =>{
-            console.log(products.data);
             this.setState({
                 products : products.data
             })
@@ -65,7 +64,6 @@ class  Products extends React.Component {
                         
                         <Card border="info" style={{ width: '18rem' , margin : "20px" }} key = {id}>
                         <Card.Header style={{color : "blueviolet"}}>{obj.productCategory}</Card.Header>
-                        {/* <Card.Img variant="top" src="https://images.indianexpress.com/2019/10/smartphones-1.jpg" /> */}
                         <Card.Body>
                         <Card.Text>
                             {obj.productName}
@@ -79,7 +77,7 @@ class  Products extends React.Component {
                         </Card.Body>
                         </Card>
                         )
-                    }  
+                    }
                     </div>                             
                 </Container>
             )

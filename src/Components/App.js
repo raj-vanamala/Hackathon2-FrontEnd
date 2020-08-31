@@ -12,7 +12,7 @@ import Home from './Home'
 import Products from './Products'
 import ContactUs from './ContactUs'
 import Cart from './Cart'
-import AdminProducts  from './AdminProducts'
+// import AdminProducts  from './AdminProducts'
 
 
 export default function App() {
