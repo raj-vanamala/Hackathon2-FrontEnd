@@ -54,8 +54,9 @@ function Payment({user}) {
             "order_id": response.data.id,
             "name": "Redefine Equipment Rentals",
             "description": "Proceed To Pay Total Amount Of",
-            "handler": function (response){
-                axios.post("http://localhost:4040/addProductsToMyOrders/",paymentInfo)
+            "handler": function (data){
+                if(data.razorpay_order_id === response.data.id)
+                    axios.post("http://localhost:4040/addProductsToMyOrders/",paymentInfo)
             },
             "prefill": {
                 "name": user.firstName,

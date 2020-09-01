@@ -1,18 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import App from './Components/App';
 import * as serviceWorker from './serviceWorker';
-
-import SignUp from './Components/SignUp';
 import { Provider } from 'react-redux';
 import { store } from './ReduxStore/store'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import UserCredentials from './Components/UserCredentials';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <SignUp />
+      <UserCredentials />
     </Provider>
   </React.StrictMode>
   ,document.getElementById('root')
