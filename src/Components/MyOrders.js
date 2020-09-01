@@ -23,7 +23,7 @@ function MyOrders({user}) {
     return (
         <Container>
                 {
-                    (MyOrders.length === 0)?<h3>No Products Yet</h3>
+                    (MyOrders.length === 0)?<h3 style={{color : "blueviolet"}}>No Products Yet</h3>
                     : 
                     MyOrders.map((eachProduct,id)=>
                     <Card className = "mb-2" key = {id}>
