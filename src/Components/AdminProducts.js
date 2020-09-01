@@ -16,7 +16,7 @@ export default class AdminProducts extends React.Component {
 
     componentDidMount() {
 
-        fetch("http://localhost:4040/loadProducts")
+        fetch("https://hackathon2-backend-code.herokuapp.com/loadProducts")
 
         .then((response)=>response.json())
 
@@ -59,7 +59,7 @@ export default class AdminProducts extends React.Component {
 
         event.preventDefault();
 
-        let url = 'http://localhost:4040/addProduct'
+        let url = 'https://hackathon2-backend-code.herokuapp.com/addProduct'
 
         fetch(url,{
             "method" : "post",
@@ -94,7 +94,7 @@ export default class AdminProducts extends React.Component {
 
         event.preventDefault();
 
-        let url = 'http://localhost:4040/deleteProduct'
+        let url = 'https://hackathon2-backend-code.herokuapp.com/deleteProduct'
 
         fetch(url,{
             "method" : "delete",

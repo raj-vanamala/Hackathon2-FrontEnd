@@ -9,7 +9,7 @@ function Payment({user}) {
     const [paymentInfo , setPaymentInfo]=useState(undefined)
 
     useEffect(()=>{
-        axios.get("http://localhost:4040/paymentInfo/"+user.email)
+        axios.get("https://hackathon2-backend-code.herokuapp.com/"+user.email)
 
         .then((response) => {
             setPaymentInfo(response.data.data)
@@ -45,7 +45,7 @@ function Payment({user}) {
             return
         }
 
-        const response = await axios.get(`http://localhost:4040/razorPay/${user.email}`)
+        const response = await axios.get(`https://hackathon2-backend-code.herokuapp.com/razorPay/${user.email}`)
 
         const options = {
             "key": "rzp_test_7BBC9fnd2CtNLJ",
@@ -56,7 +56,7 @@ function Payment({user}) {
             "description": "Proceed To Pay Total Amount Of",
             "handler": function (data){
                 if(data.razorpay_order_id === response.data.id)
-                    axios.post("http://localhost:4040/addProductsToMyOrders/",paymentInfo)
+                    axios.post("https://hackathon2-backend-code.herokuapp.com/addProductsToMyOrders/",paymentInfo)
             },
             "prefill": {
                 "name": user.firstName,

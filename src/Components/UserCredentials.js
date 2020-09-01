@@ -111,7 +111,7 @@ class UserCredentials extends React.Component {
 
         event.preventDefault();
     
-            let url = 'http://localhost:4040/signIn'
+            let url = 'https://hackathon2-backend-code.herokuapp.com/signIn'
     
             fetch(url,{
                 "method" : "post",
@@ -226,7 +226,7 @@ class UserCredentials extends React.Component {
 
         event.preventDefault();
 
-        let url = 'http://localhost:4040/signUp'
+        let url = 'https://hackathon2-backend-code.herokuapp.com/signUp'
 
         fetch(url,{
             "method" : "post",

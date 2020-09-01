@@ -14,7 +14,7 @@ class  Products extends React.Component {
 
     componentDidMount() {
 
-        fetch("http://localhost:4040/loadProducts")
+        fetch("https://hackathon2-backend-code.herokuapp.com/loadProducts")
 
         .then((response)=>response.json())
 

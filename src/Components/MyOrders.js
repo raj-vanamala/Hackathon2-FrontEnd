@@ -8,7 +8,7 @@ function MyOrders({user}) {
     const [MyOrders , setMyOrders]=useState([])
 
     useEffect(()=>{
-        axios.get(`http://localhost:4040/loadMyOrders/${user.email}`)
+        axios.get(`https://hackathon2-backend-code.herokuapp.com/${user.email}`)
 
         .then((response)=>{
             let data = response.data.data;
