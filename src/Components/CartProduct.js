@@ -71,23 +71,22 @@ class CartProduct extends React.Component {
         } else {
             totalHours = ((24 - this.state.FromTime) + ((totalDays - 1) * 24) + (24-this.state.ToTime))
         }
-        console.log(totalHours)
         totalPrice = (this.props.product.productPrice * totalHours) * this.state.quantity
-        console.log(totalPrice);
-        // let cartProduct = {
-        //     "email" : this.props.user.email,
-        //     productInfo :   {
-        //                 productName : this.props.product.productName,
-        //                 quantity : this.state.quantity,
-        //                 purchaseDate : this.state.purchaseDate,
-        //                 returnDate : this.state.returnDate,
-        //                 FromTime : this.state.FromTime,
-        //                 ToTime : this.state.ToTime,
-        //                 Hours : totalHours,
-        //                 Price : totalPrice
-        //                 }
-        // }
-        // this.props.addProductToOrders(cartProduct)
+        
+        let cartProduct = {
+            "email" : this.props.user.email,
+            productInfo :   {
+                        productName : this.props.product.productName,
+                        quantity : this.state.quantity,
+                        purchaseDate : this.state.purchaseDate,
+                        returnDate : this.state.returnDate,
+                        FromTime : this.state.FromTime,
+                        ToTime : this.state.ToTime,
+                        Hours : totalHours,
+                        Price : totalPrice
+                        }
+        }
+        this.props.addProductToOrders(cartProduct)
     }
 
     render() {
