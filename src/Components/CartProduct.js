@@ -62,26 +62,32 @@ class CartProduct extends React.Component {
         let d2=new Date(this.state.returnDate);
         let totalDays=0,totalHours=0,totalPrice=0;
 
-        for (d1; d1 <= d2; d1.setDate(d1.getDate() + 1)) {
+        for (d1; d1 < d2; d1.setDate(d1.getDate() + 1)) {
             totalDays=totalDays+1
         }
 
-        totalHours = ((24 - this.state.FromTime) + ((totalDays - 2) * 24) + (24-this.state.ToTime))
-        totalPrice = (this.props.product.productPrice * totalHours) * this.state.quantity
-        let cartProduct = {
-            "email" : this.props.user.email,
-            productInfo :   {
-                        productName : this.props.product.productName,
-                        quantity : this.state.quantity,
-                        purchaseDate : this.state.purchaseDate,
-                        returnDate : this.state.returnDate,
-                        FromTime : this.state.FromTime,
-                        ToTime : this.state.ToTime,
-                        Hours : totalHours,
-                        Price : totalPrice
-                        }
+        if(totalDays === 0) {
+            totalHours = this.state.ToTime - this.state.FromTime;
+        } else {
+            totalHours = ((24 - this.state.FromTime) + ((totalDays - 1) * 24) + (24-this.state.ToTime))
         }
-        this.props.addProductToOrders(cartProduct)
+        console.log(totalHours)
+        totalPrice = (this.props.product.productPrice * totalHours) * this.state.quantity
+        console.log(totalPrice);
+        // let cartProduct = {
+        //     "email" : this.props.user.email,
+        //     productInfo :   {
+        //                 productName : this.props.product.productName,
+        //                 quantity : this.state.quantity,
+        //                 purchaseDate : this.state.purchaseDate,
+        //                 returnDate : this.state.returnDate,
+        //                 FromTime : this.state.FromTime,
+        //                 ToTime : this.state.ToTime,
+        //                 Hours : totalHours,
+        //                 Price : totalPrice
+        //                 }
+        // }
+        // this.props.addProductToOrders(cartProduct)
     }
 
     render() {

@@ -13,6 +13,7 @@ import Products from './Products'
 import ContactUs from './ContactUs'
 import Cart from './Cart'
 // import AdminProducts  from './AdminProducts'
+import MyOrders from './MyOrders'
 
 
 export default function App() {
@@ -33,6 +34,9 @@ export default function App() {
           <div>
             <Link to="/Cart" style = {{color : "blueViolet"}}>Cart</Link>
           </div>
+          <div>
+            <Link to="/MyOrders" style = {{color : "blueViolet"}}>MyOrders</Link>
+          </div>
         </Container>
 
         <hr />
@@ -50,6 +54,9 @@ export default function App() {
             </Route>
             <Route path="/Cart">
               <Cart />
+            </Route>
+            <Route path="/MyOrders">
+              <MyOrders />
             </Route>
         </Switch>
       </div>

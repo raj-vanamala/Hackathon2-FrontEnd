@@ -45,20 +45,17 @@ function Payment({user}) {
             return
         }
 
-        const data = await axios.post('http://localhost:4040/razorPay',{})
+        const response = await axios.get(`http://localhost:4040/razorPay/${user.email}`)
 
         const options = {
             "key": "rzp_test_7BBC9fnd2CtNLJ",
-            "currency": data.data.currency,
-            "amount": data.data.amount.toString(),
-            "order_id": data.data.id,
-            "name": "Acme Corp",
-            "description": "Test Transaction",
-            // "image": "https://example.com/your_logo",
+            "currency": response.data.currency,
+            "amount": response.data.amount.toString(),
+            "order_id": response.data.id,
+            "name": "Redefine Equipment Rentals",
+            "description": "Proceed To Pay Total Amount Of",
             "handler": function (response){
-                alert(response.razorpay_payment_id);
-                alert(response.razorpay_order_id);
-                alert(response.razorpay_signature)
+                axios.post("http://localhost:4040/addProductsToMyOrders/",paymentInfo)
             },
             "prefill": {
                 "name": user.firstName,
