@@ -10,7 +10,7 @@ export  const loadCartProductsBackend = (userEmail) => {
 
     return (dispatch , getState) => {
 
-        axios.get("http://localhost:4040/loadProductsInCart"+userEmail)
+        axios.get("https://hackathon2-backend-code.herokuapp.com/loadProductsInCart"+userEmail)
 
         .then((response) => dispatch(loadCartProducts(response.data.data)))
 
@@ -23,7 +23,7 @@ export const addProductToOrders = (product) => {
 
     return (dispatch , getState) => {
 
-        axios.post("http://localhost:4040/addProductToOrders",product)
+        axios.post("https://hackathon2-backend-code.herokuapp.com/addProductToOrders",product)
 
         .then((response) => alert(response.data.message))
 
