@@ -9,7 +9,7 @@ function Payment({user}) {
     const [paymentInfo , setPaymentInfo]=useState(undefined)
 
     useEffect(()=>{
-        axios.get("https://hackathon2-backend-code.herokuapp.com/"+user.email)
+        axios.get("https://hackathon2-backend-code.herokuapp.com/paymentInfo/"+user.email)
 
         .then((response) => {
             setPaymentInfo(response.data.data)
